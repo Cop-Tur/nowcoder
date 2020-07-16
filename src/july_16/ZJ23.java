@@ -22,21 +22,9 @@ public class ZJ23 {
         int n = sc.nextInt();
         int m = 1024 - n;
         int num = 0;
-        while(m>=64){
-            m -= 64;
-            num++;
-        }
-        while (m>=16){
-            m -= 16;
-            num++;
-        }
-        while (m>=4){
-            m -= 4;
-            num++;
-        }
-        while (m>=1){
-            m -= 1;
-            num++;
+        for (int i=64;i>0;i/=4){
+            num += m/i;
+            m %= i;
         }
         System.out.println(num);
     }
